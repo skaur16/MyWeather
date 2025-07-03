@@ -55,17 +55,17 @@ fun WeatherScreen(viewModel: weatherViewModel) {
             SearchLocation(viewModel)
             Button(
                 onClick = {
+                    viewModel.cardVisible.value = false
                     if (viewModel.locationText.value.isNotBlank()){
                         viewModel.getWeather(context)
                         if(viewModel.weatherInfo.value != null){
                             viewModel.cardVisible.value = true
-                            viewModel.isLoading.value = false
                         }
                     }
                     else {
                         Toast.makeText(context, "Please enter a location", Toast.LENGTH_SHORT)
                             .show()
-                        viewModel.isLoading.value = true
+
                     }
                 },
                 colors = ButtonDefaults.buttonColors(

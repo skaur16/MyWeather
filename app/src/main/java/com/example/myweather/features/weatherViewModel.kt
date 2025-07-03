@@ -27,6 +27,8 @@ class weatherViewModel : ViewModel() {
 
     fun getWeather(context : Context) {
 
+        isLoading.value = true
+
         //we received the coordinates from the location
         var cord = getCord(locationText.value, context)
         var latitude = cord[0]
@@ -63,11 +65,13 @@ class weatherViewModel : ViewModel() {
             override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
                 Log.e("RESPONSE", response.body().toString())
                 weatherInfo.value = response.body()
+                isLoading.value = false
                 Log.e("WeatherInfo", weatherInfo.value.toString())
             }
 
             override fun onFailure(call: Call<Weather>, t: Throwable) {
                 Log.e("Try Again", t.message.toString())
+                isLoading.value = false
             }
 
         })
