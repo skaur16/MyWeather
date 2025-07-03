@@ -7,8 +7,8 @@ The application makes use of RESTful API, along with Retrofit library to execute
 
 ## Screenshots
 
-<img src="app/src/main/java/com/example/MyWeather/images/ss1.png" width="200" alt="Launch Screen">
-<img src="app/src/main/java/com/example/MyWeather/images/ss2.png" width="200" alt="Result Screen">
+<img src="images/ss1.png" width="200" alt="Launch Screen">
+<img src="images/ss2.png" width="200" alt="Result Screen">
 
 
 
